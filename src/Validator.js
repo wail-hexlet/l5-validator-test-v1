@@ -1,5 +1,6 @@
 import NumberSchema from './NumberSchema.js';
 import ArraySchema from './ArraySchema.js';
+import ObjectSchema from './ObjectSchema.js';
 
 export default class Validator {
   number() {
@@ -12,4 +13,7 @@ export default class Validator {
     return new ArraySchema([validator]);
   }
 
+  object() {
+    return new ObjectSchema();
+  }
 }
