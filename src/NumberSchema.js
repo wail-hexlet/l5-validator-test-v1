@@ -8,12 +8,22 @@ export default class NumberSchema {
   }
 
   odd() {
-    const validator = (value) => value % 2 !== 0;
+    const validator = (value) => {
+      if(value % 2 !== 0) {
+        return true;
+      }
+      return false;
+    } 
     return new NumberSchema([...this.validators, validator]);
   }
     
   even() {
-    const validator = ((value) => value % 2 === 0);
+    const validator = (value) => {
+      if(value % 2 === 0) {
+        return true;
+      }
+      return false;
+    } 
     return new NumberSchema([...this.validators, validator]);
   }
 }
